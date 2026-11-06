@@ -1,0 +1,5 @@
+<a [routerLink]="'/show/' + show().show.id">
+    <h3>{{ show().show.name }}</h3>
+    <img [src]="show().show.image?.medium ? show().show.image.medium : ''" [alt]="show().show.name">
+    <button (click)="favoriteService.addFavorites(show().show.id)"><3</button>
+</a>

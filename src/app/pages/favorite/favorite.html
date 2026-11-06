@@ -1,0 +1,11 @@
+<section>
+    <h2>Favorites shows</h2>
+
+    @for(s of shows(); track s.id) {
+        <a [routerLink]="'/show/' + s.id">
+            <h3>{{ s.name }}</h3>
+            <img [src]="s.image?.medium ? s.image.medium : ''" [alt]="s.name">
+            <button (click)="favoriteService.addFavorites(s.id)">Coeur</button>
+        </a>
+    }
+</section>

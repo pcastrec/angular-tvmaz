@@ -1,0 +1,11 @@
+<img [src]="show()?.image.original" [alt]="show()?.name" />
+<p>Summary: {{ show()?.summary }}</p>
+<p>Status: {{ show()?.status }}</p>
+
+@for(episode of show()?._embedded.episodes; track episode.id) {
+    <p>Season: {{ episode.season }}</p>
+    <p>N° {{ episode.number }}</p>
+    <p>Title: {{ episode.name }}</p>
+} @empty {
+    <p>Aucun episodes</p>
+}

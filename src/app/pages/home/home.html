@@ -1,0 +1,18 @@
+<section>
+    <h2>Best shows</h2>
+
+    <form (submit)="onSubmit($event)">
+        <input type="text" [formField]="form.search">
+        <button type="submit">Rechercher</button>
+    </form>
+
+    @if(apiService.loading()) {
+        <p>Loading ...</p>
+    } @else {
+        @for(data of shows(); track data.show.id) {
+            <app-card [show]="data" />
+        } @empty {
+            <p>Aucune série ne correspond a votre recherche</p>
+        }
+    }
+</section>

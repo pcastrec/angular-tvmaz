@@ -1,0 +1,12 @@
+<header>
+    <ul>
+        <li><a routerLink="/">Tv Maze</a></li>
+        <li><a routerLink="/favorites">Favorites</a></li>
+    </ul>
+    <form>
+        <label for="adult">Autoriser l'accès</label>
+        <input type="checkbox" id="adult"
+            (value)="allowedService.allowed()" (change)="allowedService.toggle()"
+        />
+    </form>
+</header>
